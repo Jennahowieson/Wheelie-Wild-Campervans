@@ -10,4 +10,4 @@ customers_blueprint = Blueprint("customer", __name__)
 @customers_blueprint.route("/customers")
 def customers():
     customers = customer_repository.select_all()
-    return render_template ("customers/index.html", all_customers = customers)
+    return render_template ("customers/index.html", customers = customers)

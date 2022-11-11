@@ -12,4 +12,8 @@ def vans():
     vans = van_repository.select_all()
     return render_template ("vans/index.html", vans= vans)
 
+@vans_blueprint.route("/vans/<id>")
+def van(id):
+    van = van_repository.select(id)
+    return render_template("vans/single_van.html", van=van)
 

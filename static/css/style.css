@@ -28,10 +28,13 @@ h2{
     flex-direction: column;
     border-style: solid;
     border-color: black;
-    padding: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+    padding-top: 2%;
 }
 
-#all_vans{
+#all_objects{
     display: flex;
     justify-content: space-around;
 }

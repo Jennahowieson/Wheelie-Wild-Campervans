@@ -1,12 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>All Wheelie Wild Campervans</h2>
-
+<h2>{{ van.van_name }} Details</h2>
 <main id="all_objects">
-    {% for van in vans %}
     <section class=thumbnail>
-        <h3>{{van.van_name }}</h3>
         <p>{{ van.reg_plate }}</p>
         <p>{{ van.year }}</p>
         <p>{{ van.capacity }}</p>
@@ -15,8 +12,8 @@
         <form action="/vans/{{ van.id }}/delete" method="POST">
             <input type="submit" value="Delete">
         </form>
-        <a href="/vans/{{ van.id }}">Details</a>
+        <a href="/van/{{ van.id }}">Details</a>
     </section>
-    {% endfor %}
 </main>
+
 {% endblock %}

@@ -12,3 +12,15 @@ def select_all():
         van = Van(result['van_name'],result['reg_plate'],result['year'], result['capacity'],result['type'],result['id'])
         vans.append(van)
     return vans
+
+def select(id):
+    van = None 
+    sql = "SELECT * FROM vans WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        van = Van(result['van_name'],result['reg_plate'],result['year'], result['capacity'],result['type'],result['id'])
+    return van
+
+
