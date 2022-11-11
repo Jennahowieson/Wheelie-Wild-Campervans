@@ -26,5 +26,5 @@ Create a CRUD app using Flask, Python, SQL, Html &amp; Css to help Wheelie Wild 
 - Any extra functionality such as do renters need bedding, have they paid, total revenue made this year.
 
 # Links
-Wireframe : https://www.figma.com/file/IfmntBb7u3ahy2TE0yDZ9J/Wheelie-Wild-Campervans?node-id=0%3A1
-Trello : https://trello.com/invite/b/wBUViOgq/ATTI4542e8def131be02bcf942b18a8ee28657DD5409/flask-app-project
+- **Wireframe** : https://www.figma.com/file/IfmntBb7u3ahy2TE0yDZ9J/Wheelie-Wild-Campervans?node-id=0%3A1
+- **Trello** : https://trello.com/invite/b/wBUViOgq/ATTI4542e8def131be02bcf942b18a8ee28657DD5409/flask-app-project
