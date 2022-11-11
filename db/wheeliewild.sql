@@ -32,4 +32,4 @@ INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Rocky', 'S
 INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Steve', 'SN13 624',2013, 5, 'Luxury');
 INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Roadster', 'SR18 766',2018, 5, 'Budget');
 
-INSERT INTO rentals (customer_id, van_id, rental_duration) VALUES (1,1,4)
+-- INSERT INTO rentals (customer_id, van_id, rental_duration) VALUES (1,1,4)

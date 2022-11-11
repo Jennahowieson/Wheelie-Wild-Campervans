@@ -23,4 +23,7 @@ def select(id):
         van = Van(result['van_name'],result['reg_plate'],result['year'], result['capacity'],result['type'],result['id'])
     return van
 
-
+def delete(id):
+    sql = "DELETE FROM vans WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

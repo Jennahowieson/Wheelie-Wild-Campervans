@@ -17,3 +17,8 @@ def van(id):
     van = van_repository.select(id)
     return render_template("vans/single_van.html", van=van)
 
+@vans_blueprint.route("/vans/<id>/delete", methods=["POST"])
+def delete_van(id):
+    van_repository.delete(id)
+    return redirect("/vans")
+
