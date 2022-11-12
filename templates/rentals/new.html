@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add a New Rental</h2>
+
+<form action="/rentals/new" method="POST">
+        {% for customer in customers %}
+        <label for="customer">Customer:</label>
+        <select name="customer_id" id="customer">
+            <option value="{{ customer.id}}">
+                {{ customer.customer_name }}
+            </option>
+            {% endfor %}
+        </select>
+        <label for="van">Van:</label>
+        <select name="van_id" id="van">
+            {% for van in vans %}
+            <option value="{{ van.id }}">
+                {{ van.van_name }}
+            </option>
+            {% endfor %}
+        </select>
+    <label for="start_date">Start Date:</label>
+    <input type="text" id="start_date" name="start_date">
+    <label for="end_date"> End Date :</label>
+    <input type="text" id="end_date" name="end_date">
+    <div>
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

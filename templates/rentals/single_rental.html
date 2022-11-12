@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Rental {{ rental.id }} Details</h2>
+<main id="all_objects">
+    <section class=thumbnail>
+        <h3><a href="/rentals/{{ rental.id }}">Rental ID</a></h3>
+        <p>Rental Start Date: {{ rental.start_date }} </p>
+        <p>Rental End Date: {{ rental.end_date }} </p>
+        <form action="/rentals/{{ rental.id }}/edit_rental">
+            <input type="submit" value="Edit Rental"></input>
+        </form>
+        <form action="/rentals/{{ rental.id }}/delete" method="POST">
+            <input type="submit" value="Delete">
+        </form>
+    </section>
+</main>
+
+{% endblock %}

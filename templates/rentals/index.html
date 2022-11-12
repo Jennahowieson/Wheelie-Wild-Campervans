@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>All Wheelie Wild Rentals</h2>
+
+<main>
+    <section id="all_objects">
+        {% for rental in rentals %}
+        <section class=thumbnail>
+            <h3><a href="/rentals/{{ rental.id }}">Rental {{ rental.id }}</a></h3>
+            <p>Rental Start Date: {{ rental.start_date }} </p>
+            <p>Rental End Date: {{ rental.end_date }} </p>
+            <form action="/rentals/{{ rental.id }}/edit_rental">
+                <input type="submit" value="Edit Rental"></input>
+            </form>
+            <form action="/rentals/{{ rental.id }}/delete" method="POST">
+                <input type="submit" value="Delete">
+            </form>
+        </section>
+        {% endfor %}
+        <form action="/rentals/new">
+            <input type="submit" value="New Rental">
+        </form>
+    </section>
+
+</main>
+{% endblock %}
