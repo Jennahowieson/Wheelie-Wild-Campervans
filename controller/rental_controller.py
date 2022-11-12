@@ -12,12 +12,15 @@ rentals_blueprint = Blueprint("rentals", __name__)
 @rentals_blueprint.route("/rentals")
 def rentals():
     rentals = rentals_repository.select_all()
-    return render_template ("rentals/index.html", rentals = rentals)
+    customers = customer_repository.select_all()
+    vans = van_repository.select_all()
+    return render_template ("rentals/index.html", rentals = rentals, customers = customers, vans=vans)
 
 @rentals_blueprint.route("/rentals/<id>")
 def rental(id):
     rental = rentals_repository.select(id)
-    return render_template("rentals/single_rental.html", rental = rental)
+    customer = customer_repository.select(id)
+    return render_template("rentals/single_rental.html", rental = rental, customer=customer)
 
 @rentals_blueprint.route("/rentals/<id>/delete", methods=["POST"])
 def delete_rental(id):

@@ -4,10 +4,10 @@
 <h2>Add a New Rental</h2>
 
 <form action="/rentals/new" method="POST">
-        {% for customer in customers %}
         <label for="customer">Customer:</label>
         <select name="customer_id" id="customer">
-            <option value="{{ customer.id}}">
+        {% for customer in customers %}
+            <option value="{{ customer.id }}">
                 {{ customer.customer_name }}
             </option>
             {% endfor %}

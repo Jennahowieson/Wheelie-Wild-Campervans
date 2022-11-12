@@ -8,6 +8,7 @@
         {% for rental in rentals %}
         <section class=thumbnail>
             <h3><a href="/rentals/{{ rental.id }}">Rental {{ rental.id }}</a></h3>
+            <p>Customer Name: {{ rental.customer.customer_id }} </p>
             <p>Rental Start Date: {{ rental.start_date }} </p>
             <p>Rental End Date: {{ rental.end_date }} </p>
             <form action="/rentals/{{ rental.id }}/edit_rental">
