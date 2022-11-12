@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Edit {{ customer.customer_name }} Details</h2>
+<main id="all_objects">
+    <section class=thumbnail>
+        <form action="/customers/{{ customer.id }}/edit_customer" method="POST">
+            <div>
+                <label for="customer_name">Name:</label>
+                <input type="text" id="customer_name" name="customer_name" value="{{ customer.customer_name }}">
+            </div>
+
+            <div>
+                <label for="budget"> Budget:</label>
+                <input type="number" id="budget" name="budget" value="{{ customer.budget }}">
+            </div>
+
+            <div>
+                <label for="friends"> Friends:</label>
+                <input type="number" id="friends" name="friends" value="{{ customer.friends }}">
+            </div>
+            <div>
+                <label for="license">License:</label>
+                <select name="license" id="license">
+                    <option value="True">True</option>
+                    <option value="False">False</option>
+            </div>
+            <div>
+                <input type="submit">
+            </div>
+        </form>
+    </section>
+</main>
+
+{% endblock %}

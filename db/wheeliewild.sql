@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS customers;
 CREATE TABLE customers (
     customer_name VARCHAR (255),
     license BOOLEAN,
-    budget VARCHAR (255),
+    budget INT,
     friends INT,
     id SERIAL PRIMARY KEY
 );

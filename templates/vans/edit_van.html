@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Edit {{ van.van_name }} Details</h2>
+<main id="all_objects">
+    <section class=thumbnail>
+        <form action="/vans/{{ van.id }}/edit_van" method="POST">
+            <div>
+                <label for="van_name">Name:</label>
+                <input type="text" id="van_name" name="van_name" value="{{ van.van_name }}">
+            </div>
+            <div>
+                <label for="reg_plate"> Van Registration Plate:</label>
+                <input type="text" id="reg_plate" name="reg_plate" value="{{ van.reg_plate }}">
+            </div>
+            <div>
+                <label for="year"> Van Year:</label>
+                <input type="text" id="year" name="year" value="{{ van.year }}">
+            </div>
+            <div>
+                <label for="capacity"> Van Capacity:</label>
+                <input type="text" id="capacity" name="capacity" value="{{ van.capacity }}">
+            </div>
+            <div>
+                <label for="type">Van Type:</label>
+                <select name="type" id="type">
+                    <option value="Budget">Budget</option>
+                    <option value="Luxury">Luxury</option>
+            </div>
+            <div>
+                <input type="submit">
+            </div>
+        </form>
+    </section>
+</main>
+
+{% endblock %}

@@ -6,17 +6,42 @@
 <main id="all_objects">
     {% for van in vans %}
     <section class=thumbnail>
-        <h3>{{van.van_name }}</h3>
-        <p>{{ van.reg_plate }}</p>
-        <p>{{ van.year }}</p>
-        <p>{{ van.capacity }}</p>
-        <p>{{ van.type }}</p>
-        <a href="/vans/{{ van.id }}/edit">Edit</a>
+        <h3><a href="/vans/{{ van.id }}">{{van.van_name }}</a></h3>
+        <form action="/vans/{{ van.id }}/edit_van">
+            <input type="submit" value = "Edit Van"></input>
+         </form>        
         <form action="/vans/{{ van.id }}/delete" method="POST">
             <input type="submit" value="Delete">
         </form>
-        <a href="/vans/{{ van.id }}">Details</a>
     </section>
     {% endfor %}
+
+    <form action="/vans" method="POST">
+        <div>
+            <label for="van_name">Name:</label>
+            <input type="text" id="van_name" name="van_name">
+        </div>
+
+        <label for="reg_plate"> Van Registration Plate:</label>
+        <input type="text" id="reg_plate" name="reg_plate">
+        </div>
+        <div>
+            <label for="year"> Van Year:</label>
+            <input type="text" id="year" name="year">
+        </div>
+        <div>
+            <label for="capacity"> Van Capacity:</label>
+            <input type="text" id="capacity" name="capacity">
+        </div>
+        <div>
+            <label for="type">Van Type:</label>
+            <select name="type" id="type">
+                <option value="Budget">Budget</option>
+                <option value="Luxury">Luxury</option>
+        </div>
+        <input type="submit">
+        </div>
+    </form>
 </main>
+
 {% endblock %}

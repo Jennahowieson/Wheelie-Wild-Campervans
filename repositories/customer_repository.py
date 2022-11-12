@@ -26,3 +26,15 @@ def delete(id):
     sql = "DELETE FROM customers WHERE id = %s"
     values =[id]
     run_sql(sql, values)
+
+def update(customer):
+    sql = "UPDATE customers SET (customer_name, license, budget, friends) = (%s, %s,%s,%s) WHERE id = %s"
+    values = [customer.customer_name, customer.license, customer.budget, customer.friends, customer.id]
+    run_sql(sql, values)
+
+def save(customer):
+    sql = "INSERT INTO customers (customer_name, license, budget, friends) VALUES (%s,%s,%s,%s) RETURNING id"
+    values = [customer.customer_name, customer.license, customer.budget, customer.friends]
+    result = run_sql(sql, values)
+    id = result[0]['id']
+    customer.id = id

@@ -6,15 +6,37 @@
 <main id="all_objects">
     {% for customer in customers %}
     <section class=thumbnail>
-        <h3>{{customer.customer_name }}</h3>
-        <p>{{ customer.license }}</p>
-        <p>{{ customer.friends }}</p>
-        <a href="/customers/{{ customer.id }}/edit">Edit</a>
+        <h3><a href="/customers/{{ customer.id }}">{{customer.customer_name }}</a></h3>
+        <form action="/customers/{{ customer.id }}/edit_customer">
+            <input type="submit" value = "Edit Customer"></input>
+         </form>        
         <form action="/customers/{{ customer.id }}/delete" method="POST">
             <input type="submit" value="Delete">
         </form>
-        <a href="/customers/{{ customer.id }}">Details</a>
+
     </section>
     {% endfor %}
+
+    <form action="/customers" method="POST">
+        <div>
+            <label for="customer_name">Name:</label>
+            <input type="text" id="customer_name" name="customer_name">
+        </div>
+
+        <label for="license"> Does Customer Have License?:</label>
+        <select name="license" id="license">
+            <option value="True">True</option>
+            <option value="False">False</option>
+        <div>
+            <label for="budget"> Customer's Budget:</label>
+            <input type="text" id="budget" name="budget">
+        </div>
+        <div>
+            <label for="friends"> How Many Friends Are They Travelling With?:</label>
+            <input type="text" id="friends" name="friends">
+        </div>
+        <input type="submit">
+    </form>
+
 </main>
 {% endblock %}

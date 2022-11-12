@@ -4,14 +4,15 @@
 <h2>{{ customer.customer_name }}'s Customer Details</h2>
 <main id="all_objects">
     <section class=thumbnail>
-        <p>{{ customer.license }}</p>
-        <p>{{ customer.friends }}</p>
-        <p>{{ customer.budget }}</p>
-        <a href="/customers/{{ customer.id }}/edit">Edit</a>
+        <p>Customer Has License: {{ customer.license }}</p>
+        <p>Customer's Friends: {{ customer.friends }}</p>
+        <p>Customer's Budget:{{ customer.budget }}</p>
+        <form action="/customers/{{ customer.id }}/edit_customer">
+            <input type="submit" value = "Edit Customer"></input>
+         </form>        
         <form action="/customers/{{ customer.id }}/delete" method="POST">
             <input type="submit" value="Delete">
         </form>
-        <a href="/customers/{{ customer.id }}">Details</a>
     </section>
 </main>
 

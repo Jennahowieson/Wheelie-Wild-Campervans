@@ -27,3 +27,15 @@ def delete(id):
     sql = "DELETE FROM vans WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def update(van):
+    sql = "UPDATE vans SET (van_name, reg_plate, year, capacity, type) = (%s, %s,%s,%s,%s) WHERE id = %s"
+    values = [van.van_name, van.reg_plate, van.year, van.capacity, van.type, van.id]
+    run_sql(sql, values)
+
+def save(van):
+    sql = "INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES (%s,%s,%s,%s,%s) RETURNING id"
+    values = [van.van_name, van.reg_plate, van.year, van.capacity, van.type]
+    result = run_sql(sql, values)
+    id = result[0]['id']
+    van.id = id

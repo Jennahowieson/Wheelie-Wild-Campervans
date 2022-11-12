@@ -21,3 +21,31 @@ def customer(id):
 def delete_customer(id):
     customer_repository.delete(id)
     return redirect("/customers")
+
+@customers_blueprint.route("/customers/<id>/edit_customer")
+def edit_customer(id):
+    customer = customer_repository.select(id)
+    return render_template ("customers/edit_customer.html", customer = customer)
+
+@customers_blueprint.route("/customers/<id>/edit_customer", methods=["POST"])
+def update_van(id):
+    # license, budget, friends
+    customer_name = request.form["customer_name"]
+    license = request.form["license"]
+    budget = request.form['budget']
+    friends = request.form["friends"]
+    customer = Customer(customer_name, license, budget, friends, id)
+    customer_repository.update(customer)
+    id = id
+    return render_template("customers/single_customer.html", customer = customer)
+
+
+@customers_blueprint.route("/customers", methods=["POST"])
+def new_customer():
+    customer_name = request.form["customer_name"]
+    license = request.form["license"]
+    budget = request.form['budget']
+    friends = request.form["friends"]
+    new_customer = Customer(customer_name, license, budget, friends, id)
+    customer_repository.save(new_customer)
+    return redirect ("/customers")
