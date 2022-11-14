@@ -70,6 +70,10 @@ h2{
     align-items: center;
 }
 
+.thumbnail > img {
+    width: 50%;
+}
+
 #all_objects{
     display: flex;
     flex-wrap: wrap;

@@ -14,7 +14,13 @@
         <form action="/vans/{{ van.id }}/delete" method="POST">
             <input type="submit" value="Delete">
         </form>
+        {% if van.type == 'Budget' %}
+        <img src="{{url_for('static', filename='img/budget_van.jpeg')}}" />
+        {% else %}
+        <img src="{{url_for('static', filename='img/luxury_van.jpeg')}}" />
+        {% endif %}
     </section>
+<img src = "{{ url_for('static', filename='img/') }}">
 </main>
 
 {% endblock %}
