@@ -21,7 +21,8 @@ def rentals():
 def rental(id):
     rental = rentals_repository.select(id)
     customer = customer_repository.select(id)
-    return render_template("rentals/single_rental.html", rental = rental, customer=customer)
+    van = van_repository.select(id)
+    return render_template("rentals/single_rental.html", rental = rental, customer = customer, van = van)
 
 @rentals_blueprint.route("/rentals/<id>/delete", methods=["POST"])
 def delete_rental(id):

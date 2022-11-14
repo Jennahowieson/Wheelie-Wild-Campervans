@@ -24,7 +24,9 @@ def select(id):
     results = run_sql(sql, values)
     if results:
         result = results[0]
-        rental = Rental(result['customer_id'],result['van_id'],result['start_date'], result['end_date'], result['id'])
+        customer = customer_repository.select(result["customer_id"])
+        van = van_repository.select(result["van_id"])
+        rental = Rental(customer, van, result['start_date'], result['end_date'], result['id'])
     return rental
 
 def delete(id):

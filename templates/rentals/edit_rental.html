@@ -1,25 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Edit {{ rental.id }} Details</h2>
+<h2>Edit Rental {{ rental.id }} Details</h2>
 <main id="all_objects">
     <section class=thumbnail>
         <form action="/rentals/{{ rental.id }}/edit_rental" method="POST">
             <label for="customer_id">Customer:</label>
             <select name="customer_id" id="customer_id">
+                <option> {{ rental.customer.customer_name }} </option> 
                 {% for customer in customers %}
+                {% if customer.id != rental.customer.id %}
                 <option value="{{ customer.id }}">
                     {{ customer.customer_name }}
                 </option>
+                {% endif %}
                 {% endfor %}
             </select>
             <label for="van_id">Van:</label>
-            <select name="van_id" id="van_id" >
-                <option selected = selected> {{ rental.van }} </option>
+            <select name="van_id" id="van_id">
+                <option> {{ rental.van.van_name }} </option> 
                 {% for van in vans %}
-                <option value="{{ van.id }}" >
+                {% if van.id != rental.van.id %}
+                <option value="{{ van.id }}"> 
                     {{ van.van_name }}
                 </option>
+                {% endif %}
                 {% endfor %}
             </select>
             </select>
