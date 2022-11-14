@@ -5,6 +5,35 @@ main{
     align-items: center;
     margin: 2rem;
 }
+
+footer{
+    display: flex;
+    background-color: rgb(255, 204, 110);
+    padding: 1rem;
+    font-family: "Abel", sans-serif;
+    justify-content: space-evenly;
+
+}
+
+#footer-menu {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;   
+    margin: 0;
+    padding: 1rem;
+    font-family: "Abel", sans-serif;
+}
+
+footer > nav> ul> li {
+    color: black;
+    text-decoration:bold;
+    padding-left: 1rem
+}
+footer > nav> ul> li>a {
+    color: black;
+    text-decoration:bold;
+}
+
 .menu {
     display: flex;
     justify-content: space-around;
@@ -14,6 +43,7 @@ main{
     padding: 2rem;
     font-family: "Abel", sans-serif;
 }
+
 .menu>li>a{
     color: black;
     text-decoration:bold;
