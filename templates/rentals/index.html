@@ -10,8 +10,8 @@
             <h3><a href="/rentals/{{ rental.id }}">Rental {{ rental.id }}</a></h3>
             <p>Customer Name: {{ rental.customer.customer_name }} </p>
             <p>Van Rented: {{ rental.van.van_name }}</p>
-            <p>Rental Start Date: {{ rental.start_date }} </p>
-            <p>Rental End Date: {{ rental.end_date }} </p> 
+            <p>Rental Start Date: {{ rental.start_date_in_words() }} </p>
+            <p>Rental End Date: {{ rental.end_date_in_words() }} </p> 
             <form action="/rentals/{{ rental.id }}/edit_rental">
                 <input type="submit" value="Edit Rental"></input>
             </form>

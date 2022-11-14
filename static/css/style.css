@@ -58,22 +58,23 @@ h2{
 }
 
 .thumbnail{
-    display: flex;
+    display:flex;
     flex-direction: column;
     border-style: solid;
     border-color: black;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-bottom: 2%;
-    padding-top: 2%;
-    margin:5%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    margin:2rem;
     align-items: center;
 }
 
 #all_objects{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    padding:5%;
+    padding:2%;
 }
 
 .thumbnail > h3{

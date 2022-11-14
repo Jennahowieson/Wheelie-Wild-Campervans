@@ -43,5 +43,6 @@ def save(rental):
 
 def update(rental):
     sql = "UPDATE rentals SET (customer_id,van_id,start_date,end_date) = (%s, %s,%s,%s) WHERE id = %s"
-    values = [rental.customer.id, rental.van.id, rental.start_date, rental.end_date, rental.id]   
+    values = [rental.customer.id, rental.van.id, rental.start_date, rental.end_date, rental.id]
     run_sql(sql, values)
+

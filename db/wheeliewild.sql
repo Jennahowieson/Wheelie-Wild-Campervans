@@ -22,8 +22,8 @@ CREATE TABLE vans(
 CREATE TABLE rentals(
     customer_id INT REFERENCES customers(id),
     van_id INT REFERENCES vans(id),
-    start_date VARCHAR(255),
-    end_date VARCHAR (255), 
+    start_date DATE,
+    end_date DATE, 
     id SERIAL PRIMARY KEY
 );
 
@@ -32,10 +32,10 @@ INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Kirsten
 INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Rae', 'False', 500, 4);
 
 
-INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Rocky', 'SN12 743',2012, 5, 'Luxury');
-INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Steve', 'SN13 624',2013, 3, 'Luxury');
-INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Roadster', 'SR18 766',2018, 2, 'Budget');
+INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Rocky', 'SN12 743','2012', 5, 'Luxury');
+INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Steve', 'SN13 624','2013', 3, 'Luxury');
+INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Roadster', 'SR18 766','2018', 2, 'Budget');
 
-INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (1,1,'3rd Sep', '5 Sep');
-INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (2,2,'6th Sep', '8th Sep');
-INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (3,3,'3rd Sep', '5 Sep');
+INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (1,1,'2022-09-21', '2022-09-25');
+INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (2,2,'2022-11-23', '2022-11-26');
+INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (3,3,'2022-12-12', '2022-12-15');

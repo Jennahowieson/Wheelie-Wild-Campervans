@@ -39,3 +39,4 @@ def save(van):
     result = run_sql(sql, values)
     id = result[0]['id']
     van.id = id
+
