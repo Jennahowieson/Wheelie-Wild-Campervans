@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Edit {{ rental.id }} Details</h2>
+<main id="all_objects">
+    <section class=thumbnail>
+        <form action="/rentals/{{ rental.id }}/edit_rental" method="POST">
+            <label for="customer_id">Customer:</label>
+            <select name="customer_id" id="customer_id">
+                {% for customer in customers %}
+                <option value="{{ customer.id }}">
+                    {{ customer.customer_name }}
+                </option>
+                {% endfor %}
+            </select>
+            <label for="van_id">Van:</label>
+            <select name="van_id" id="van_id" >
+                <option selected = selected> {{ rental.van }} </option>
+                {% for van in vans %}
+                <option value="{{ van.id }}" >
+                    {{ van.van_name }}
+                </option>
+                {% endfor %}
+            </select>
+            </select>
+            <label for="start_date">Start Date:</label>
+            <input type="text" id="start_date" name="start_date" value="{{ rental.start_date }}">
+            <label for="end_date"> End Date :</label>
+            <input type="text" id="end_date" name="end_date" value="{{ rental.end_date }}">
+            <div>
+                <input type="submit">
+            </div>
+        </form>
+    </section>
+</main>
+
+{% endblock %}

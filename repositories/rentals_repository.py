@@ -3,13 +3,17 @@ from db.run_sql import run_sql
 from models.van import Van
 from models.customer import Customer
 from models.rental import Rental
+import repositories.customer_repository as customer_repository
+import repositories.van_repository as van_repository
 
 def select_all():
     rentals = []
     sql = "SELECT * FROM rentals"
     results = run_sql(sql)
     for result in results:
-        rental = Rental(result['customer_id'],result['van_id'],result['start_date'], result['end_date'], result['id'])
+        customer = customer_repository.select(result["customer_id"])
+        van = van_repository.select(result["van_id"])
+        rental = Rental(customer, van,result['start_date'], result['end_date'], result['id'])
         rentals.append(rental)
     return rentals
 
@@ -34,3 +38,8 @@ def save(rental):
     result = run_sql(sql, values)
     id = result[0]['id']
     rental.id = id
+
+def update(rental):
+    sql = "UPDATE rentals SET (customer_id,van_id,start_date,end_date) = (%s, %s,%s,%s) WHERE id = %s"
+    values = [rental.customer.id, rental.van.id, rental.start_date, rental.end_date, rental.id]   
+    run_sql(sql, values)

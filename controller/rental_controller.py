@@ -51,16 +51,19 @@ def create_rental():
 @rentals_blueprint.route("/rentals/<id>/edit_rental")
 def edit_rental(id):
     rental = rentals_repository.select(id)
-    return render_template ("rentals/edit_rental.html", rental = rental)
+    vans = van_repository.select_all()
+    customers = customer_repository.select_all()
+    return render_template ("rentals/edit_rental.html", rental = rental, customers=customers, vans=vans)
 
 
-# @entals_blueprint.route("/rentals/<id>/edit_rental", methods=["POST"])
-# def update_rental(id):
-#     van_name = request.form["van_name"]
-#     reg_plate = request.form["reg_plate"]
-#     year = request.form["year"]
-#     capacity = request.form["capacity"]
-#     type = request.form["type"]
-#     van = Van(van_name, reg_plate, year, capacity,type, id)
-#     van_repository.update(van)
-#     return render_template("vans/single_van.html", van=van)
+@rentals_blueprint.route("/rentals/<id>/edit_rental", methods=["POST"])
+def update_rental(id):
+    customer_id = request.form["customer_id"]
+    van_id = request.form["van_id"]
+    start_date = request.form["start_date"]
+    end_date = request.form ["end_date"]
+    customer = customer_repository.select(customer_id)
+    van = van_repository.select(van_id)
+    rental = Rental(customer, van, start_date, end_date,id)
+    rentals_repository.update(rental)
+    return redirect("/rentals")

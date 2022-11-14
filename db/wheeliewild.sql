@@ -28,9 +28,14 @@ CREATE TABLE rentals(
 );
 
 INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Jenna', 'True', 1000, 4);
+INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Kirsten', 'True', 1000, 3);
+INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Rae', 'False', 500, 4);
+
 
 INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Rocky', 'SN12 743',2012, 5, 'Luxury');
-INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Steve', 'SN13 624',2013, 5, 'Luxury');
-INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Roadster', 'SR18 766',2018, 5, 'Budget');
+INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Steve', 'SN13 624',2013, 3, 'Luxury');
+INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Roadster', 'SR18 766',2018, 2, 'Budget');
 
-INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (1,1,'3rd Sep', '5 Sep')
+INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (1,1,'3rd Sep', '5 Sep');
+INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (2,2,'6th Sep', '8th Sep');
+INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (3,3,'3rd Sep', '5 Sep');
