@@ -9,8 +9,8 @@
         <p>Van Capacity: {{ van.capacity }}</p>
         <p>Van Type: {{ van.type }}</p>
         <form action="/vans/{{ van.id }}/edit_van">
-            <input type="submit" value = "Edit Van"></input>
-         </form>        
+            <input type="submit" value="Edit Van"></input>
+        </form>
         <form action="/vans/{{ van.id }}/delete" method="POST">
             <input type="submit" value="Delete">
         </form>
@@ -20,7 +20,6 @@
         <img src="{{url_for('static', filename='img/luxury_van.jpeg')}}" />
         {% endif %}
     </section>
-<img src = "{{ url_for('static', filename='img/') }}">
 </main>
 
 {% endblock %}

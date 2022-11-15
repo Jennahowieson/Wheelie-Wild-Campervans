@@ -5,37 +5,27 @@
 <main id="all_objects">
     <section class=thumbnail>
         <form action="/rentals/{{ rental.id }}/edit_rental" method="POST">
-            <label for="customer_id">Customer:</label>
-            <select name="customer_id" id="customer_id">
-                <option> {{ rental.customer.customer_name }} </option> 
+            <label for="customer">Customer:</label>
+            <select name="customer_id" id="customer">
                 {% for customer in customers %}
-                {% if customer.id != rental.customer.id %}
                 <option value="{{ customer.id }}">
                     {{ customer.customer_name }}
                 </option>
-                {% endif %}
                 {% endfor %}
             </select>
-            <label for="van_id">Van:</label>
-            <select name="van_id" id="van_id">
-                <option> {{ rental.van.van_name }} </option> 
+            <label for="van">Van:</label>
+            <select name="van_id" id="van">
                 {% for van in vans %}
-                {% if van.id != rental.van.id %}
-                <option value="{{ van.id }}"> 
+                <option value="{{ van.id }}">
                     {{ van.van_name }}
                 </option>
-                {% endif %}
                 {% endfor %}
             </select>
-            </select>
             <label for="start_date">Start Date:</label>
-            <input type="date" id="start_date" name="start_date" value="{{ rental.start_date }}">
+            <input type="date" id="start_date" name="start_date">
             <label for="end_date"> End Date :</label>
-            <input type="date" id="end_date" name="end_date" value="{{ rental.end_date }}">
-            <div>
-                <input type="submit">
-            </div>
-        </form>
+            <input type="date" id="end_date" name="end_date">
+            <input type="submit">
     </section>
 </main>
 

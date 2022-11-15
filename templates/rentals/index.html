@@ -12,6 +12,7 @@
             <p>Van Rented: {{ rental.van.van_name }}</p>
             <p>Rental Start Date: {{ rental.start_date_in_words() }} </p>
             <p>Rental End Date: {{ rental.end_date_in_words() }} </p> 
+            <p>Trip Duration (nights): {{ rental.trip_duration () }} </p>
             <form action="/rentals/{{ rental.id }}/edit_rental">
                 <input type="submit" value="Edit Rental"></input>
             </form>

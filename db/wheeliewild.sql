@@ -35,7 +35,3 @@ INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Rae', '
 INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Rocky', 'SN12 743','2012', 5, 'Luxury');
 INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Steve', 'SN13 624','2013', 3, 'Luxury');
 INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Roadster', 'SR18 766','2018', 2, 'Budget');
-
-INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (1,1,'2022-09-21', '2022-09-25');
-INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (2,2,'2022-11-23', '2022-11-26');
-INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (3,3,'2022-12-12', '2022-12-15');

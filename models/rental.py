@@ -1,3 +1,4 @@
+from datetime import date, datetime
 class Rental:
     def __init__(self,customer,van,start_date,end_date,id=None):
         self.customer = customer
@@ -17,3 +18,7 @@ class Rental:
         month = self.start_date.strftime("%B")
         year = self.start_date.strftime("%Y")
         return (day +" "+ month + " " + year)
+
+    def trip_duration(self):
+        duration = self.end_date - self.start_date
+        return duration.days

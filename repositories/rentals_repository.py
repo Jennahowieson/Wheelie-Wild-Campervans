@@ -1,10 +1,10 @@
-from db.run_sql import run_sql
-
-from models.van import Van
-from models.customer import Customer
-from models.rental import Rental
 import repositories.customer_repository as customer_repository
 import repositories.van_repository as van_repository
+from db.run_sql import run_sql
+from models.customer import Customer
+from models.rental import Rental
+from models.van import Van
+
 
 def select_all():
     rentals = []
@@ -44,5 +44,4 @@ def save(rental):
 def update(rental):
     sql = "UPDATE rentals SET (customer_id,van_id,start_date,end_date) = (%s, %s,%s,%s) WHERE id = %s"
     values = [rental.customer.id, rental.van.id, rental.start_date, rental.end_date, rental.id]
-    run_sql(sql, values)
-
+    return run_sql(sql, values)
