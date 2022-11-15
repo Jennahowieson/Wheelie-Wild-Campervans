@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>All Wheelie Wild Rentals</h2>
 
 <main>
+    <h2>All Wheelie Wild Rentals</h2>
+
     <section id="all_objects">
         {% for rental in rentals %}
         <section class=thumbnail>
@@ -11,7 +12,7 @@
             <p>Customer Name: {{ rental.customer.customer_name }} </p>
             <p>Van Rented: {{ rental.van.van_name }}</p>
             <p>Rental Start Date: {{ rental.start_date_in_words() }} </p>
-            <p>Rental End Date: {{ rental.end_date_in_words() }} </p> 
+            <p>Rental End Date: {{ rental.end_date_in_words() }} </p>
             <p>Trip Duration (nights): {{ rental.trip_duration () }} </p>
             <form action="/rentals/{{ rental.id }}/edit_rental">
                 <input type="submit" value="Edit Rental"></input>
@@ -21,9 +22,14 @@
             </form>
         </section>
         {% endfor %}
-        <form action="/rentals/new">
-            <input type="submit" value="New Rental">
-        </form>
+        <section>
+
+            <h2> Add A New Rental</h2>
+            <form action="/rentals/new">
+                <input type="submit" value="New Rental">
+            </form>
+        </section>
+
     </section>
 
 </main>

@@ -3,7 +3,7 @@
 
 <h2>{{ van.van_name }} Details</h2>
 <main id="all_objects">
-    <section class=thumbnail>
+    <section class="thumbnail">
         <p>Van Reg Plate : {{ van.reg_plate }}</p>
         <p>Van Year: {{ van.year }}</p>
         <p>Van Capacity: {{ van.capacity }}</p>
@@ -14,12 +14,24 @@
         <form action="/vans/{{ van.id }}/delete" method="POST">
             <input type="submit" value="Delete">
         </form>
-        {% if van.type == 'Budget' %}
-        <img src="{{url_for('static', filename='img/budget_van.jpeg')}}" />
-        {% else %}
-        <img src="{{url_for('static', filename='img/luxury_van.jpeg')}}" />
-        {% endif %}
     </section>
+    <div>
+        <h3>Example Images Of Our {{ van.type }} Vans </h3>
+        <section class="image_gallery">
+            {% if van.type == 'Luxury' %}
+            <img src="{{url_for('static', filename='img/luxury_van3.jpeg')}}" alt="luxury campervan" />
+            <img src="{{url_for('static', filename='img/luxury_van4.jpeg')}}" alt="luxury campervan" />
+            <img src="{{url_for('static', filename='img/luxury_van5.jpeg')}}" alt="luxury campervan" />
+            <img src="{{url_for('static', filename='img/luxury_van6.jpeg')}}" alt="luxury campervan" />
+            {% elif van.type == 'Budget' %}
+            <img src="{{url_for('static', filename='img/budget_van.jpeg')}}" alt="budget campervan" />
+            <img src="{{url_for('static', filename='img/budget_van2.jpeg')}}" alt="budget campervan" />
+            <img src="{{url_for('static', filename='img/budget_van3.jpeg')}}" alt="budget campervan" />
+            <img src="{{url_for('static', filename='img/budget_van4.jpeg')}}" alt="budget campervan" />
+            {% endif %}
+            <figcaption>Images diplayed are for example purposes </figcaption>
+        </section>
+    </div>
 </main>
 
 {% endblock %}

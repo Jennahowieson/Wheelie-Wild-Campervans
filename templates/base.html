@@ -11,10 +11,11 @@
   <title>Wheelie Wild Campervans</title>
 </head>
 
-<body>
-  <header>
+<body class="grid">
+  <header class="header">
+    <img src="{{url_for('static', filename='img/wheelie-logo.png')}}" alt="wheelie wild campervan logo" height="100px"/>
     <nav>
-      <ul class="menu">
+      <ul>
         <li><a href="/"> Home </a></li>
         <li><a href="/vans"> Vans </a></li>
         <li><a href="/customers"> Customers </a></li>
@@ -22,18 +23,26 @@
       </ul>
     </nav>
   </header>
-    {% block content %}
-    {% endblock %}
+  <main class=" main">
+    <content class="content">
+      {% block content %}
+      {% endblock %}
+    </content>
+  </main>
+  <aside class="aside">
+    <nav>
+      <ul>
+        <li><a href="/"> Home </a></li>
+        <li><a href="/vans"> Vans </a></li>
+        <li><a href="/customers"> Customers </a></li>
+        <li><a href="/rentals">Rentals</a></li>
+      </ul>
+    </nav>
+  </aside>
 </body>
 
 <footer>
-  <nav>
-    <ul id ="footer-menu">
-      <li><a href="/"> Home </a></li>
-      <li><a href="/vans"> Vans </a></li>
-      <li><a href="/customers"> Customers </a></li>
-      <li><a href="/rentals">Rentals</a></li>
-    </ul>
-  </nav>
+<p> &#169 Wheelie Wild Campervans </p>
 </footer>
+
 </html>

@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>All Wheelie Wild Customers</h2>
 
 <main>
+    <h2>All Wheelie Wild Customers</h2>
+
+
     <section id="all_objects">
         {% for customer in customers %}
         <section class=thumbnail>
@@ -19,6 +21,7 @@
         {% endfor %}
     </section>
 
+    <h2> Add A New Rental</h2>
 
     <form action="/customers" method="POST">
         <label for="customer_name">Name:</label>
