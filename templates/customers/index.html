@@ -14,7 +14,7 @@
             <form action="/customers/{{ customer.id }}/delete" method="POST">
                 <input type="submit" value="Delete">
             </form>
-
+            <p> Rental Options For Customer: {{ customer.give_rental_options() }} </p>
         </section>
         {% endfor %}
     </section>
