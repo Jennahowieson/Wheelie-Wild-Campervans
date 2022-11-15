@@ -16,26 +16,10 @@
             <form action="/customers/{{ customer.id }}/delete" method="POST">
                 <input type="submit" value="Delete">
             </form>
-            <p> Rental Options For Customer: {{ customer.give_rental_options() }} </p>
+            <p> Rental Options For Customer: {{ customer.len_rental_options() }} </p>
         </section>
         {% endfor %}
     </section>
-
-    <h2> Add A New Rental</h2>
-
-    <form action="/customers" method="POST">
-        <label for="customer_name">Name:</label>
-        <input type="text" id="customer_name" name="customer_name">
-        <label for="budget"> Customer's Budget:</label>
-        <input type="text" id="budget" name="budget">
-        <label for="friends"> How Many Friends Are They Travelling With?:</label>
-        <input type="text" id="friends" name="friends">
-        <label for="license"> Does Customer Have License?:</label>
-        <select name="license" id="license">
-            <option value="True">True</option>
-            <option value="False">False</option>
-            <input type="submit">
-    </form>
 
 </main>
 {% endblock %}

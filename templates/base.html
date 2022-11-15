@@ -13,7 +13,8 @@
 
 <body class="grid">
   <header class="header">
-    <img src="{{url_for('static', filename='img/wheelie-logo.png')}}" alt="wheelie wild campervan logo" height="100px"/>
+    <a href="/"><img src="{{url_for('static', filename='img/wheelie-logo.png')}}" alt="wheelie wild campervan logo"
+        height="100px"></a>
     <nav>
       <ul>
         <li><a href="/"> Home </a></li>
@@ -30,19 +31,16 @@
     </content>
   </main>
   <aside class="aside">
-    <nav>
-      <ul>
-        <li><a href="/"> Home </a></li>
-        <li><a href="/vans"> Vans </a></li>
-        <li><a href="/customers"> Customers </a></li>
-        <li><a href="/rentals">Rentals</a></li>
+        <h3>Manage System</h3>
+        <p><a href="/customers/new"> New Customer </a></p>
+        <p><a href="/vans/new "> New Van </a></p>
+        <p><a href="/rentals/new">New Rental</a></p>
       </ul>
     </nav>
   </aside>
+  <footer>
+    <p> &#169 Wheelie Wild Campervans </p>
+  </footer>
 </body>
-
-<footer>
-<p> &#169 Wheelie Wild Campervans </p>
-</footer>
 
 </html>

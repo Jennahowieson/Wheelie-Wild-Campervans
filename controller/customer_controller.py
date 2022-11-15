@@ -15,7 +15,8 @@ def customers():
 @customers_blueprint.route("/customers/<id>")
 def customer(id):
     customer = customer_repository.select(id)
-    return render_template("customers/single_customer.html", customer = customer)
+    rental_options = customer.give_rental_options()
+    return render_template("customers/single_customer.html", customer = customer, rental_options =rental_options)
 
 @customers_blueprint.route("/customers/<id>/delete", methods=["POST"])
 def delete_customer(id):
@@ -39,8 +40,13 @@ def update_van(id):
     id = id
     return render_template("customers/single_customer.html", customer = customer)
 
+@customers_blueprint.route("/customers/new")
+def new_customer_page():
+    customers = customer_repository.select_all()
+    return render_template ("customers/new.html", customers = customers)
 
-@customers_blueprint.route("/customers", methods=["POST"])
+
+@customers_blueprint.route("/customers/new", methods=["POST"])
 def new_customer():
     customer_name = request.form["customer_name"]
     license = request.form["license"]

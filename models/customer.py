@@ -9,7 +9,7 @@ class Customer:
         self.budget = budget
         self.friends = friends
         self.id = id
-
+    
     def give_rental_options(self):
         available_vans = []
         vans = van_repository.select_all()
@@ -17,3 +17,7 @@ class Customer:
             if self.friends < van.capacity:
                 available_vans.append(van.van_name)
         return (available_vans)
+
+    def len_rental_options(self):
+        options = self.give_rental_options()
+        return len(options)

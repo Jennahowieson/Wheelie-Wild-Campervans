@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2> Add A New Customer</h2>
+
+<form action="/customers/new" method="POST" class="new_form">
+    <label for="customer_name">Name:</label>
+    <input type="text" id="customer_name" name="customer_name">
+    <label for="budget"> Customer's Budget:</label>
+    <input type="text" id="budget" name="budget">
+    <label for="friends"> How Many Friends Are They Travelling With?:</label>
+    <input type="text" id="friends" name="friends">
+    <label for="license"> Does Customer Have License?:</label>
+    <select name="license" id="license">
+        <option value="True">True</option>
+        <option value="False">False</option>
+        <input type="submit">
+</form>
+
+{% endblock %}

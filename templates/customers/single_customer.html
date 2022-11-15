@@ -4,15 +4,24 @@
 <h2>{{ customer.customer_name }}'s Customer Details</h2>
 <main id="all_objects">
     <section class=thumbnail>
+        <h3>Customer Details</h3>
         <p>Customer Has License: {{ customer.license }}</p>
         <p>Customer's Friends: {{ customer.friends }}</p>
         <p>Customer's Budget:{{ customer.budget }}</p>
         <form action="/customers/{{ customer.id }}/edit_customer">
-            <input type="submit" value = "Edit Customer"></input>
-         </form>        
+            <input type="submit" value="Edit Customer"></input>
+        </form>
         <form action="/customers/{{ customer.id }}/delete" method="POST">
             <input type="submit" value="Delete">
         </form>
+    </section>
+    <section id="rental_options">
+        <h3>Rental Options For {{ customer.customer_name }}</h3>
+        {% for option in rental_options %}
+        <ul>
+            <li> {{ option }}</li>
+        </ul>
+        {% endfor %}
     </section>
 </main>
 

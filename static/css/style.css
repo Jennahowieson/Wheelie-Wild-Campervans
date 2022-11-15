@@ -1,7 +1,7 @@
 main {
     font-family: "Abel", sans-serif;
     align-items: center;
-    margin: 2rem;
+    margin: 1rem;
 }
 
 body {
@@ -10,13 +10,12 @@ body {
 }
 
 footer {
-    grid-area: footer ;
+    grid-area: footer;
     display: flex;
     background-color: rgb(255, 204, 110);
-    padding: 1rem;
     font-family: "Abel", sans-serif;
     justify-content: space-evenly;
-    position:static;
+    position: static;
     bottom: 0;
     width: 100%;
 }
@@ -50,12 +49,15 @@ footer>nav>ul>li>a {
     padding: 1rem;
     font-family: "Abel", sans-serif;
 }
-.header > nav > ul {
+
+.header>nav>ul {
     display: flex;
     list-style: none;
 }
-.header > nav > ul >li {
+
+.header>nav>ul>li {
     padding: 1rem;
+    font-size: 1.5rem;
 }
 
 
@@ -77,12 +79,12 @@ h2 {
 .thumbnail {
     display: flex;
     flex-direction: column;
-    border-style: solid;
-    border-color: black;
-    padding:3rem;
+    padding: 3rem;
     align-items: center;
     margin: 0.5rem;
     width: 20%;
+    border-radius: 10%;
+    background-color: rgb(255, 214, 139);
 }
 
 #all_objects {
@@ -90,6 +92,7 @@ h2 {
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: center;
+    align-items: flex-start;
 }
 
 .thumbnail>h3 {
@@ -109,20 +112,32 @@ form {
     grid-template: auto/ auto auto auto auto;
     grid-gap: 10px;
 }
-
 .image_gallery>img {
     width: 300px;
     height: 100%;
     object-fit: cover;
 }
 
+.homepage-gallery{
+    display: grid;
+    grid-template: auto/ auto auto auto auto;
+    grid-gap: 5px;
+    justify-content: center
+}
+
+.homepage-gallery>img {
+    width: 200px;
+    height: 100%;
+}
+
 .main {
     grid-area: main;
-
 }
+
 .aside {
+    font-family: "Abel", sans-serif;
     grid-area: aside;
-    background-color: rgb(255, 133, 62);
+    background-color: rgb(255, 220, 200);
     display: flex;
     flex-direction: column;
     align-content: stretch;
@@ -130,12 +145,15 @@ form {
     align-items: center;
     margin: 0;
 }
-.aside >nav > ul > li{
+
+.aside>p>a {
+    color: black;
+    text-decoration: none;
     list-style: none;
     line-height: 2rem;
-}
-.aside >nav > ul > li >a {
-color: black;
+    padding: 0.5rem;
+    background-color: orange;
+    border-radius: 10%;
 }
 
 .grid {
@@ -143,7 +161,35 @@ color: black;
     grid-template-columns: auto auto auto auto 150px;
     grid-template-rows: auto;
     grid-template-areas:
-    "header header header header header"
-    "main main main main aside"
-    "footer footer footer footer footer";
+        "header header header header header"
+        "main main main main aside"
+        "footer footer footer footer footer";
+}
+
+#rental_options {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    align-items: center;
+    height: max-content;
+    margin: 0.5rem;
+    width: 20%;
+    border-radius: 10%;
+    background-color: rgb(255, 214, 139);
+}
+
+.new_form {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.new_form > label {
+    padding-top: 1rem;
+}
+
+.new_form > select {
+    height:2rem;
+}
+.new_form > input {
+    height:2rem;
 }

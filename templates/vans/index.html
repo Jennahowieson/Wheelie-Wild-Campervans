@@ -15,25 +15,6 @@
         {% endfor %}
     </section>
 
-    <h2> Add A New Campervan</h2>
-
-    <form action="/vans" method="POST">
-        <label for="van_name">Name:</label>
-        <input type="text" id="van_name" name="van_name">
-        <label for="reg_plate"> Van Registration Plate:</label>
-        <input type="text" id="reg_plate" name="reg_plate">
-        <label for="year"> Van Year:</label>
-        <input type="text" id="year" name="year">
-        <label for="capacity"> Van Capacity:</label>
-        <input type="text" id="capacity" name="capacity">
-        <label for="type">Van Type:</label>
-        <select name="type" id="type">
-            <option value="Budget">Budget</option>
-            <option value="Luxury">Luxury</option>
-            <div>
-                <input type="submit">
-            </div>
-    </form>
 </main>
 
 {% endblock %}
