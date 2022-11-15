@@ -19,7 +19,7 @@
         <h3>Rental Options For {{ customer.customer_name }}</h3>
         {% for option in rental_options %}
         <ul>
-            <li> {{ option }}</li>
+           <a href="/vans/{{ option.id }}"><li> {{ option.van_name }}</li> </a>
         </ul>
         {% endfor %}
     </section>

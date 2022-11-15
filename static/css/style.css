@@ -59,6 +59,9 @@ footer>nav>ul>li>a {
     padding: 1rem;
     font-size: 1.5rem;
 }
+.header > nav > ul > li > a:hover {
+    font-size: larger;
+  }
 
 
 .menu>li>a {
@@ -118,6 +121,11 @@ form {
     object-fit: cover;
 }
 
+.image_gallery>img:hover{
+    zoom: 200%
+}
+
+
 .homepage-gallery{
     display: grid;
     grid-template: auto/ auto auto auto auto;
@@ -128,6 +136,9 @@ form {
 .homepage-gallery>img {
     width: 200px;
     height: 100%;
+}
+.homepage-gallery>img:hover{
+    zoom: 200%
 }
 
 .main {
@@ -192,4 +203,23 @@ form {
 }
 .new_form > input {
     height:2rem;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #ffae00;
+}
+
+#center{
+    display: flex;
+    flex-direction: column;
+    align-items: center
 }

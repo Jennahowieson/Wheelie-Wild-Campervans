@@ -6,3 +6,5 @@ class Van:
         self.capacity =capacity
         self.type = type
         self.id = id
+
+

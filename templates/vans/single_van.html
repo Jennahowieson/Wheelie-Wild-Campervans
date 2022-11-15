@@ -15,7 +15,7 @@
             <input type="submit" value="Delete">
         </form>
     </section>
-    <div>
+    <div id="center">
         <h3>Example Images Of Our {{ van.type }} Vans </h3>
         <section class="image_gallery">
             {% if van.type == 'Luxury' %}
@@ -29,8 +29,8 @@
             <img src="{{url_for('static', filename='img/budget_van3.jpeg')}}" alt="budget campervan" />
             <img src="{{url_for('static', filename='img/budget_van4.jpeg')}}" alt="budget campervan" />
             {% endif %}
-            <figcaption>Images diplayed are for example purposes </figcaption>
         </section>
+        <figcaption>Images diplayed are for example purposes </figcaption>
     </div>
 </main>
 

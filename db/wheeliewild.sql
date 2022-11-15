@@ -27,16 +27,16 @@ CREATE TABLE rentals(
     id SERIAL PRIMARY KEY
 );
 
-INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Jenna', 'True', 1000, 2);
-INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Kirsten', 'True', 2000, 3);
-INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Rae', 'True', 1500, 2);
-INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Bruce', 'True', 1000, 1);
-INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Connor', 'True', 500, 1);
-INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Tina', 'False', 3000, 4);
-INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Stewart', 'True', 1000, 3);
-INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Fran', 'False', 750, 2);
-INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Clare', 'True', 1000, 3);
-INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Deb', 'False', 500, 1);
+INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Jenna', 'True', 150, 2);
+INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Kirsten', 'True', 110, 3);
+INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Rae', 'True', 170, 2);
+INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Bruce', 'True', 50, 1);
+INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Connor', 'True', 70, 1);
+INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Tina', 'False', 200, 4);
+INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Stewart', 'True', 150, 3);
+INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Fran', 'False', 80, 2);
+INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Clare', 'True', 110, 3);
+INSERT INTO customers (customer_name, license, budget, friends) VALUES ('Deb', 'False', 130, 1);
 
 
 

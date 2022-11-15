@@ -4,6 +4,7 @@ from db.run_sql import run_sql
 from models.customer import Customer
 from models.rental import Rental
 from models.van import Van
+from datetime import date
 
 
 def select_all():
@@ -45,3 +46,15 @@ def update(rental):
     sql = "UPDATE rentals SET (customer_id,van_id,start_date,end_date) = (%s, %s,%s,%s) WHERE id = %s"
     values = [rental.customer.id, rental.van.id, rental.start_date, rental.end_date, rental.id]
     return run_sql(sql, values)
+
+
+def current_rentals (id):
+    rental = select(id)
+    today = date.today()        
+    start = rental.start_date
+    end = rental.end_date
+    booked_vans = []
+    for van in vans:
+        if start < today < end:
+            booked_vans.append(van)
+        return booked_vans 

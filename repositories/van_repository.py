@@ -39,3 +39,14 @@ def save(van):
     id = result[0]['id']
     van.id = id
 
+def select_by_type(type):
+    vans = []
+    sql = "SELECT * FROM vans WHERE type = %s"
+    values= [type]
+    results =  run_sql(sql, values)
+    for result in results:
+        van = Van(result['van_name'],result['reg_plate'],result['year'], result['capacity'],result['type'],result['id'])
+        vans.append(van)
+    return vans
+
+
