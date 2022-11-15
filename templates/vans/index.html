@@ -8,12 +8,9 @@
         {% for van in vans %}
         <section class=thumbnail>
             <h3><a href="/vans/{{ van.id }}">{{van.van_name }}</a></h3>
-            <form action="/vans/{{ van.id }}/edit_van">
-                <input type="submit" value="Edit Van"></input>
-            </form>
-            <form action="/vans/{{ van.id }}/delete" method="POST">
-                <input type="submit" value="Delete">
-            </form>
+            <p>Sleeps {{ van.capacity }}</p>
+            <p>{{ van.year }} </p>
+            <p>{{ van.type }} </p>
         </section>
         {% endfor %}
     </section>
