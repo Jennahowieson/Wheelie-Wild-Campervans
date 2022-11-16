@@ -22,7 +22,7 @@ CREATE TABLE vans(
 CREATE TABLE rentals(
     customer_id INT REFERENCES customers(id),
     van_id INT REFERENCES vans(id),
-    start_date DATE,
+    start_date DATE, 
     end_date DATE, 
     id SERIAL PRIMARY KEY
 );

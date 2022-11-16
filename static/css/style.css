@@ -42,7 +42,7 @@ footer>nav>ul>li>a {
 .header {
     grid-area: header;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     background-color: orange;
     margin: 0;
@@ -56,11 +56,16 @@ footer>nav>ul>li>a {
 }
 
 .header>nav>ul>li {
-    padding: 1rem;
+    padding: 0.2rem;
     font-size: 1.5rem;
 }
 .header > nav > ul > li > a:hover {
     font-size: larger;
+  }
+
+  .header > nav > ul > li > a {
+    color: black;
+    text-decoration: none;
   }
 
 
@@ -143,19 +148,19 @@ form {
 
 .main {
     grid-area: main;
-    text-align: center;
 }
 
 .aside {
     font-family: "Abel", sans-serif;
     grid-area: aside;
-    background-color: rgb(255, 220, 200);
     display: flex;
     flex-direction: column;
-    align-content: stretch;
     justify-content: flex-start;
     align-items: center;
     margin: 0;
+    padding: 1rem;
+    border-right: solid;
+    border-color: #ffae00;
 }
 
 .aside>p>a {
@@ -170,12 +175,14 @@ form {
 
 .grid {
     display: grid;
-    grid-template-columns: auto auto auto auto 150px;
+    grid-template-columns: 140px 85% auto;
     grid-template-rows: auto;
     grid-template-areas:
-        "header header header header header"
-        "main main main main aside"
-        "footer footer footer footer footer";
+        "header header header"
+        "aside main main"
+        "footer footer footer";
+    align-content: center;
+    justify-content: space-between;
 }
 
 #rental_options {
@@ -223,4 +230,18 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center
+}
+
+input {
+    border-style: solid;
+    border-color: #ffae00;
+    font-family: "Abel", sans-serif;
+    border-radius: 10%;
+    background-color:white;
+}
+
+a {
+    color: rgb(113, 0, 206);
+    text-decoration: none;
+    list-style: none;
 }
