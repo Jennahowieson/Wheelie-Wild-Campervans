@@ -3,6 +3,7 @@ main {
     align-items: center;
     margin: 1rem;
     align-content: center;
+    height: max-content;
 }
 
 body {
@@ -13,7 +14,7 @@ body {
 footer {
     grid-area: footer;
     display: flex;
-    background-color: rgb(255, 204, 110);
+    background-color: #ffce4c;
     font-family: "Abel", sans-serif;
     justify-content: space-evenly;
     position: static;
@@ -45,7 +46,7 @@ footer>nav>ul>li>a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: orange;
+    background-color: #E46628;
     margin: 0;
     padding: 1rem;
     font-family: "Abel", sans-serif;
@@ -99,12 +100,12 @@ h2 {
 .thumbnail {
     display: flex;
     flex-direction: column;
-    padding: 3rem;
+    padding: 2rem;
     align-items: center;
     margin: 0.5rem;
     width: 20%;
     border-radius: 10%;
-    background-color: rgb(248, 200, 111);
+    background-color:#ffce4c;
 }
 
 #all_objects {
@@ -124,6 +125,9 @@ h2 {
 main > h3{
     text-align: center;
     text-decoration: bold;
+    background-color: #6ab9c8;
+    margin-top: 1rem;
+    padding: 1.5rem;
 }
 
 form {
@@ -158,6 +162,7 @@ form {
     width: 200px;
     height: 100%;
 }
+
 .homepage-gallery>img:hover{
     zoom: 200%
 }
@@ -185,8 +190,11 @@ form {
     list-style: none;
     line-height: 2rem;
     padding: 0.5rem;
-    background-color: orange;
+    background-color:#ffce4c;
     border-radius: 10%;
+}
+.aside>p>a:hover {
+background-color:#6ab9c8;
 }
 
 .grid {
@@ -210,12 +218,13 @@ form {
     margin: 0.5rem;
     width: 20%;
     border-radius: 10%;
-    background-color: rgb(255, 214, 139);
+    background-color: #ffce4c;
 }
 
 .new_form {
     margin-left: 30%;
     margin-right: 30%;
+    align-items: center
 }
 
 .new_form > label {
@@ -227,8 +236,19 @@ form {
 }
 .new_form > input {
     height:2rem;
+    width: 10rem;
 }
-
+#submit {
+    margin-top: 2rem;
+    height:2rem;
+    border-radius: 2%;
+}
+#small_submit{
+    margin-top: 1rem;
+    height:2rem;
+    border-radius: 2%;
+    width: fit-content;
+}
 .overlay{
     position: absolute;
     top: 0;
@@ -250,10 +270,14 @@ form {
 
 input {
     border-style: solid;
-    border-color: #ffae00;
+    border-color: #E46628;
     font-family: "Abel", sans-serif;
-    border-radius: 10%;
+    border-radius: 5%;
     background-color:white;
+    width:12rem;
+}
+select{
+    width: 12rem;
 }
 
 a {
@@ -268,14 +292,9 @@ a:hover {
     list-style: none;
 }
 
-input:hover{
-    background-color: #00ffd5;
-    color: black;
-}
-
 #currently_booked{
     border-style: solid;
-    border-color: #ffae00;
+    border-color:#ffce4c;
     font-family: "Abel", sans-serif;
     text-align: center;
     border-radius:5%;

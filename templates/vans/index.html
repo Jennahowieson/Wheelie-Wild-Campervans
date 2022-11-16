@@ -8,7 +8,7 @@
     <section id="all_objects">
         {% for van in currently_in_use %}
         <section class=booked_thumbnail>
-            <p> {{ van.van_name }} </p>
+            <h4> <a href="/vans/{{ van.id }}">{{ van.van_name }}</a> </h4>
         </section>
         {% endfor %}
     </section>
