@@ -6,9 +6,11 @@
     <h2>All Wheelie Wild Rentals</h2>
     <section>
         <h3>Vans Currently Booked</h3>
-        
+        {% for rental in booked %}
+        <p> <a href="/rentals/{{ rental.id }}">{{ rental.van.van_name }}</a></p>
+        {% endfor %}
     </section>
-
+    <h3>Full Inventory</h3>
     <section id="all_objects">
         {% for rental in rentals %}
         <section class=thumbnail>
@@ -25,17 +27,14 @@
                 <input type="submit" value="Delete">
             </form>
         </section>
-
+        {% endfor %}
     </section>
-    {% endfor %}
-    <section>
 
+    <section>
         <h2> Add A New Rental</h2>
         <form action="/rentals/new">
             <input type="submit" value="New Rental">
         </form>
-    </section>
-
     </section>
 
 </main>

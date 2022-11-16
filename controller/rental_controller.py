@@ -14,7 +14,7 @@ def rentals():
     rentals = rentals_repository.select_all()
     customers = customer_repository.select_all()
     vans = van_repository.select_all()
-    booked = rentals_repository.booked()
+    booked = rentals_repository.current_rentals()
     return render_template ("rentals/index.html", rentals = rentals, customers=customers, vans = vans, booked=booked)
     # return render_template ("rentals/index.html", rentals = rentals, customers = customers, vans=vans)
 

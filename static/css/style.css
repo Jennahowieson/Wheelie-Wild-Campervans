@@ -143,6 +143,7 @@ form {
 
 .main {
     grid-area: main;
+    text-align: center;
 }
 
 .aside {

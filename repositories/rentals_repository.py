@@ -5,6 +5,7 @@ from models.customer import Customer
 from models.rental import Rental
 from models.van import Van
 from datetime import date
+import pdb 
 
 
 def select_all():
@@ -48,8 +49,22 @@ def update(rental):
     return run_sql(sql, values)
 
 
-def current_rentals (id):
+def current_rentals ():
+    booked = []
+    sql = "SELECT * FROM rentals WHERE start_date < CURRENT_DATE AND end_date > CURRENT_DATE "
+    results = run_sql(sql)
+    for result in results:
+        customer = customer_repository.select(result["customer_id"])
+        van = van_repository.select(result["van_id"])
+        rental = Rental(customer, van,result['start_date'], result['end_date'], result['id'])
+        booked.append(rental)
+    return booked
+    
+    
+    return run_sql(sql)
+
     rental = select(id)
+
     today = date.today()        
     start = rental.start_date
     end = rental.end_date
