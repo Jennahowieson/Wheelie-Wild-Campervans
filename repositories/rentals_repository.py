@@ -3,7 +3,6 @@ import repositories.van_repository as van_repository
 from db.run_sql import run_sql
 from models.customer import Customer
 from models.rental import Rental
-from models.van import Van
 from datetime import date
 import pdb 
 
@@ -17,6 +16,7 @@ def select_all():
         van = van_repository.select(result["van_id"])
         rental = Rental(customer, van,result['start_date'], result['end_date'], result['id'])
         rentals.append(rental)
+    rentals.sort(key=lambda x: x.start_date)
     return rentals
 
 def select(id):
@@ -58,6 +58,7 @@ def current_rentals():
         van = van_repository.select(result["van_id"])
         rental = Rental(customer, van,result['start_date'], result['end_date'], result['id'])
         booked.append(rental)
+    booked.sort(key=lambda x: x.start_date)
     return booked
 
 def available_rentals():
@@ -69,5 +70,6 @@ def available_rentals():
         van = van_repository.select(result["van_id"])
         rental = Rental(customer, van,result['start_date'], result['end_date'], result['id'])
         available.append(rental)
+    available.sort(key=lambda x: x.start_date)
     return available
 

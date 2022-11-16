@@ -1,7 +1,7 @@
 from db.run_sql import run_sql
-
+import pdb
 from models.van import Van
-
+import repositories.rentals_repository as rentals_repository
 
 def select_all():
     vans = []
@@ -10,6 +10,7 @@ def select_all():
     for result in results:
         van = Van(result['van_name'],result['reg_plate'],result['year'], result['capacity'],result['type'],result['id'])
         vans.append(van)
+    vans.sort(key=lambda x: x.van_name)
     return vans
 
 def select(id):
@@ -47,6 +48,17 @@ def select_by_type(type):
     for result in results:
         van = Van(result['van_name'],result['reg_plate'],result['year'], result['capacity'],result['type'],result['id'])
         vans.append(van)
+    vans.sort(key=lambda x: x.van_name)
     return vans
+
+def currently_in_use ():
+    in_use = []
+    current_rentals = rentals_repository.current_rentals()
+    van_ids = [van.id for van in current_rentals]
+    all_vans = select_all()
+    for van in all_vans:
+        if van.id in van_ids:
+            in_use.append(van)
+    return in_use
 
 

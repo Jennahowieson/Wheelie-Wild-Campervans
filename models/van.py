@@ -1,3 +1,5 @@
+import repositories.rentals_repository as rentals_repository
+
 class Van:
     def __init__(self, van_name, reg_plate, year, capacity,type,id=None):
         self.van_name = van_name
@@ -6,5 +8,7 @@ class Van:
         self.capacity =capacity
         self.type = type
         self.id = id
+
+        
 
 

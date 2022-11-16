@@ -1,6 +1,4 @@
 from db.run_sql import run_sql
-
-from models.van import Van
 from models.customer import Customer
 
 def select_all():
@@ -10,6 +8,7 @@ def select_all():
     for result in results:
         customer = Customer(result['customer_name'],result['license'],result['budget'], result['friends'],result['id'])
         customers.append(customer)
+    customers.sort(key=lambda x: x.customer_name)
     return customers
 
 def select(id):

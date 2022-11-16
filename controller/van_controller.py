@@ -10,7 +10,8 @@ vans_blueprint = Blueprint("van", __name__)
 @vans_blueprint.route("/vans")
 def vans():
     vans = van_repository.select_all()
-    return render_template ("vans/index.html", vans= vans)
+    currently_in_use = van_repository.currently_in_use()
+    return render_template ("vans/index.html", vans= vans, currently_in_use = currently_in_use)
 
 @vans_blueprint.route("/vans/<id>")
 def van(id):

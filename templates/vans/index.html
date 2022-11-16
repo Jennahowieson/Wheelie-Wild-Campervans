@@ -4,6 +4,16 @@
 
 <main>
     <h2>All Wheelie Wild Campervans</h2>
+    <h3>Vans Currently In Use </h3>
+    <section id="all_objects">
+        {% for van in currently_in_use %}
+        <section class=booked_thumbnail>
+            <p> {{ van.van_name }} </p>
+        </section>
+        {% endfor %}
+    </section>
+
+    <h3>All Vans In Fleet </h3>
     <section id="all_objects">
         {% for van in vans %}
         <section class=thumbnail>
@@ -14,7 +24,6 @@
         </section>
         {% endfor %}
     </section>
-
 </main>
 
 {% endblock %}
