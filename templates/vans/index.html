@@ -9,6 +9,8 @@
         {% for van in currently_in_use %}
         <section class=booked_thumbnail>
             <h4> <a href="/vans/{{ van.id }}">{{ van.van_name }}</a> </h4>
+            <img src="{{url_for('static', filename='img/van_logo_small.png')}}" alt="blue campervan graphic"
+                height="50px">
         </section>
         {% endfor %}
     </section>

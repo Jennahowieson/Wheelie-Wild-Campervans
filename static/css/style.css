@@ -1,7 +1,10 @@
+html{
+    background-color: #fff6dc;
+}
 main {
     font-family: "Abel", sans-serif;
     align-items: center;
-    margin: 1rem;
+    margin: 2rem;
     align-content: center;
     height: max-content;
 }
@@ -9,6 +12,7 @@ main {
 body {
     margin: 0;
     width: auto;
+    min-height: 100%;
 }
 
 footer {
@@ -61,14 +65,15 @@ footer>nav>ul>li>a {
     padding: 0.2rem;
     font-size: 1.5rem;
 }
-.header > nav > ul > li > a:hover {
-    text-decoration: underline;
-  }
 
-  .header > nav > ul > li > a {
+.header>nav>ul>li>a:hover {
+    text-decoration: underline;
+}
+
+.header>nav>ul>li>a {
     color: black;
     text-decoration: none;
-  }
+}
 
 
 .menu>li>a {
@@ -93,7 +98,7 @@ h2 {
     align-items: center;
     margin: 0.5rem;
     width: 20%;
-    border-radius: 10%;
+    border-radius: 5%;
     background-color: rgb(255, 182, 23);
 }
 
@@ -105,7 +110,7 @@ h2 {
     margin: 0.5rem;
     width: 20%;
     border-radius: 10%;
-    background-color:#ffce4c;
+    background-color: #ffce4c;
 }
 
 #all_objects {
@@ -122,7 +127,7 @@ h2 {
     margin: 2rem;
 }
 
-main > h3{
+main>h3 {
     text-align: center;
     text-decoration: bold;
     background-color: #6ab9c8;
@@ -140,18 +145,19 @@ form {
     grid-template: auto/ auto auto auto auto;
     grid-gap: 10px;
 }
+
 .image_gallery>img {
     width: 300px;
     height: 100%;
     object-fit: cover;
 }
 
-.image_gallery>img:hover{
+.image_gallery>img:hover {
     zoom: 200%
 }
 
 
-.homepage-gallery{
+.homepage-gallery {
     display: grid;
     grid-template: auto/ auto auto auto auto;
     grid-gap: 5px;
@@ -163,12 +169,13 @@ form {
     height: 100%;
 }
 
-.homepage-gallery>img:hover{
+.homepage-gallery>img:hover {
     zoom: 200%
 }
 
 .main {
     grid-area: main;
+    height: 100%;
 }
 
 .aside {
@@ -180,8 +187,6 @@ form {
     align-items: center;
     margin: 0;
     padding: 1rem;
-    border-right: solid;
-    border-color: #ffae00;
 }
 
 .aside>p>a {
@@ -190,12 +195,14 @@ form {
     list-style: none;
     line-height: 2rem;
     padding: 0.5rem;
-    background-color:#ffce4c;
-    border-radius: 10%;
+    background-color: #ffce4c;
+    border-radius: 5%;
 }
+
 .aside>p>a:hover {
-background-color:#6ab9c8;
+    background-color: #6ab9c8;
 }
+
 
 .grid {
     display: grid;
@@ -204,10 +211,12 @@ background-color:#6ab9c8;
     grid-template-areas:
         "header header header"
         "aside main main"
+        "aside main main"
         "footer footer footer";
     align-content: center;
     justify-content: space-between;
 }
+
 
 #rental_options {
     display: flex;
@@ -217,7 +226,7 @@ background-color:#6ab9c8;
     height: max-content;
     margin: 0.5rem;
     width: 20%;
-    border-radius: 10%;
+    border-radius: 5%;
     background-color: #ffce4c;
 }
 
@@ -227,42 +236,33 @@ background-color:#6ab9c8;
     align-items: center
 }
 
-.new_form > label {
+.new_form>label {
     padding-top: 1rem;
 }
 
-.new_form > select {
-    height:2rem;
-}
-.new_form > input {
-    height:2rem;
-    width: 10rem;
-}
-#submit {
-    margin-top: 2rem;
-    height:2rem;
-    border-radius: 2%;
-}
-#small_submit{
-    margin-top: 1rem;
-    height:2rem;
-    border-radius: 2%;
-    width: fit-content;
-}
-.overlay{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .5s ease;
-    background-color: #ffae00;
+.new_form>select {
+    height: 2rem;
 }
 
-#center{
+.new_form>input {
+    height: 2rem;
+    width: 10rem;
+}
+
+#submit {
+    margin-top: 2rem;
+    height: 2rem;
+    border-radius: 5%;
+}
+
+#small_submit {
+    margin-top: 1rem;
+    height: 2rem;
+    border-radius: 5%;
+    width: fit-content;
+}
+
+#center {
     display: flex;
     flex-direction: column;
     align-items: center
@@ -270,13 +270,14 @@ background-color:#6ab9c8;
 
 input {
     border-style: solid;
-    border-color: #E46628;
+    border-color: #6ab9c8;
     font-family: "Abel", sans-serif;
-    border-radius: 5%;
-    background-color:white;
-    width:12rem;
+    border-radius: 2%;
+    background-color: white;
+    width: 12rem;
 }
-select{
+
+select {
     width: 12rem;
 }
 
@@ -292,12 +293,68 @@ a:hover {
     list-style: none;
 }
 
-#currently_booked{
+#currently_booked {
     border-style: solid;
-    border-color:#ffce4c;
+    border-color: #ffce4c;
     font-family: "Abel", sans-serif;
     text-align: center;
-    border-radius:5%;
+    border-radius: 5%;
     width: 30%;
     margin: auto
+}
+
+@media only screen and (max-width:414px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "header"
+            "main"
+            "aside"
+            "footer";
+        align-content: center;
+        justify-content: space-between;
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header>a>img {
+        width: 100%;
+    }
+
+    .header>nav>ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+    }
+
+    .homepage-gallery {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        width: 100%;
+        justify-items: center;
+    }
+
+    #all_objects {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+    }
+
+    .booked_thumbnail {
+        width: 90%;
+    }
+
+    .thumbnail {
+        width: 90%;
+    }
+    .main{
+        margin: 0rem;
+    }
 }

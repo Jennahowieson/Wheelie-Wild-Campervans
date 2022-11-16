@@ -8,13 +8,14 @@
         {% for customer in customers %}
         <section class=thumbnail>
             <h3><a href="/customers/{{ customer.id }}">{{customer.customer_name }}</a></h3>
+            <h4><a href="/customers/{{ customer.id }}">Rental Options For Customer: {{ customer.len_rental_options()
+                    }}</a></h4>
             <form action="/customers/{{ customer.id }}/edit_customer">
                 <input type="submit" value="Edit Customer" id="small_submit">
             </form>
             <form action="/customers/{{ customer.id }}/delete" method="POST">
                 <input type="submit" value="Delete" id="small_submit">
             </form>
-            <p> Rental Options For Customer: {{ customer.len_rental_options() }} </p>
         </section>
         {% endfor %}
     </section>

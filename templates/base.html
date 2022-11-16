@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
@@ -25,15 +25,19 @@
     </nav>
   </header>
   <main class="main">
-      {% block content %}
-      {% endblock %}
+    {% block content %}
+    {% endblock %}
   </main>
   <aside class="aside">
-        <h3>Shortcuts</h3>
-        <p><a href="/customers/new"> New Customer </a></p>
-        <p><a href="/vans/new "> New Van </a></p>
-        <p><a href="/rentals/new">New Rental</a></p>
-      </ul>
+    <h3>Shortcuts</h3>
+    <p><a href="/customers/new"> New Customer </a></p>
+    <p><a href="/vans/new "> New Van </a></p>
+    <p><a href="/rentals/new">New Rental</a></p>
+    <br>
+    <p><a href="/vans"> All Vans </a></p>
+    <p><a href="/customers"> All Customers </a></p>
+    <p><a href="/rentals">All Rentals</a></p>
+    </ul>
     </nav>
   </aside>
   <footer>
