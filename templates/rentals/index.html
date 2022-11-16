@@ -4,15 +4,28 @@
 
 <main>
     <h2>All Wheelie Wild Rentals</h2>
-    <section>
-        <h3>Vans Currently Booked</h3>
+    <h3>Vans Currently Booked</h3>
+    <section id="all_objects">
         {% for rental in booked %}
-        <p> <a href="/rentals/{{ rental.id }}">{{ rental.van.van_name }}</a></p>
+        <section class=booked_thumbnail>
+            <h3><a href="/rentals/{{ rental.id }}">Rental {{ rental.van.van_name}}</a></h3>
+            <p>Customer Name: {{ rental.customer.customer_name }} </p>
+            <p>Rental Start Date: {{ rental.start_date_in_words() }} </p>
+            <p>Rental End Date: {{ rental.end_date_in_words() }} </p>
+            <p>Trip Duration (nights): {{ rental.trip_duration () }} </p>
+            <form action="/rentals/{{ rental.id }}/edit_rental">
+                <input type="submit" value="Edit Rental"></input>
+            </form>
+            <form action="/rentals/{{ rental.id }}/delete" method="POST">
+                <input type="submit" value="Delete">
+            </form>
+        </section>
         {% endfor %}
     </section>
-    <h3>Full Inventory</h3>
+
+    <h3>All Rentals</h3>
     <section id="all_objects">
-        {% for rental in rentals %}
+        {% for rental in available_rentals %}
         <section class=thumbnail>
             <h3><a href="/rentals/{{ rental.id }}">Rental {{ rental.id }}</a></h3>
             <p>Customer Name: {{ rental.customer.customer_name }} </p>
@@ -30,8 +43,8 @@
         {% endfor %}
     </section>
 
+    <h3> Add A New Rental</h3>
     <section>
-        <h2> Add A New Rental</h2>
         <form action="/rentals/new">
             <input type="submit" value="New Rental">
         </form>

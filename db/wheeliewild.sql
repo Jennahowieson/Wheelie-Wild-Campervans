@@ -53,10 +53,10 @@ INSERT INTO vans (van_name, reg_plate, year, capacity, type) VALUES ('Crewser', 
 
 
 INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (1, 1, '2022-12-23', '2022-12-26');
-INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (2, 2, '2022-11-11', '2022-11-14');
+INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (2, 2, '2022-11-11', '2022-11-19');
 INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (3, 3, '2022-12-02', '2022-12-05');
 INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (4, 4, '2022-12-12', '2022-12-14');
-INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (5, 5, '2022-11-23', '2022-11-26');
+INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (5, 5, '2022-11-13', '2022-11-26');
 INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (6, 6, '2022-11-23', '2022-11-30');
 INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (7, 7, '2022-11-20', '2022-11-30');
 INSERT INTO rentals (customer_id, van_id, start_date, end_date) VALUES (8, 1, '2022-12-01', '2022-12-14');

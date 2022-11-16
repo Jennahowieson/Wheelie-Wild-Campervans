@@ -15,7 +15,8 @@ def rentals():
     customers = customer_repository.select_all()
     vans = van_repository.select_all()
     booked = rentals_repository.current_rentals()
-    return render_template ("rentals/index.html", rentals = rentals, customers=customers, vans = vans, booked=booked)
+    available_rentals = rentals_repository.available_rentals()
+    return render_template ("rentals/index.html", rentals = rentals, customers=customers, vans = vans, booked=booked, available_rentals=available_rentals)
     # return render_template ("rentals/index.html", rentals = rentals, customers = customers, vans=vans)
 
 @rentals_blueprint.route("/rentals/<id>")

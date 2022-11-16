@@ -49,7 +49,7 @@ def update(rental):
     return run_sql(sql, values)
 
 
-def current_rentals ():
+def current_rentals():
     booked = []
     sql = "SELECT * FROM rentals WHERE start_date < CURRENT_DATE AND end_date > CURRENT_DATE "
     results = run_sql(sql)
@@ -59,17 +59,15 @@ def current_rentals ():
         rental = Rental(customer, van,result['start_date'], result['end_date'], result['id'])
         booked.append(rental)
     return booked
-    
-    
-    return run_sql(sql)
 
-    rental = select(id)
+def available_rentals():
+    available = []
+    sql = "SELECT * FROM rentals WHERE end_date > CURRENT_DATE"
+    results = run_sql(sql)
+    for result in results:
+        customer = customer_repository.select(result["customer_id"])
+        van = van_repository.select(result["van_id"])
+        rental = Rental(customer, van,result['start_date'], result['end_date'], result['id'])
+        available.append(rental)
+    return available
 
-    today = date.today()        
-    start = rental.start_date
-    end = rental.end_date
-    booked_vans = []
-    for van in vans:
-        if start < today < end:
-            booked_vans.append(van)
-        return booked_vans 
